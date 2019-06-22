@@ -18,14 +18,12 @@ import org.w3c.dom.Text;
 
 public class frag1 extends Fragment {
 
-    Button _proses;
-    EditText _inputText;
-    TextView _resultView;
+    Button proses;
+    EditText inputText;
+    TextView resultView;
     @Nullable
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        //Root_view = inflater.inflate(R.layout.frag1_layout, null);
 
         return inflater.inflate(R.layout.frag1_layout,container,false );
     }
@@ -34,15 +32,15 @@ public class frag1 extends Fragment {
     @Override
     public View getView() {
 
-        _inputText = (EditText) getActivity().findViewById(R.id.inputText);
-        _resultView = (TextView) getActivity().findViewById(R.id.resultView);
-        _proses = (Button) getActivity().findViewById(R.id.proses);
+        inputText = (EditText) getActivity().findViewById(R.id.inputText);
+        resultView = (TextView) getActivity().findViewById(R.id.resultView);
+        proses = (Button) getActivity().findViewById(R.id.proses);
         requireActivity();
-        _proses.setOnClickListener(new View.OnClickListener() {
+        proses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = _inputText.getText().toString();
-                _resultView.setText(text);
+                String text = inputText.getText().toString();
+                resultView.setText(text);
             }
         });
         return super.getView();
