@@ -13,7 +13,7 @@ import android.view.View;
 import com.example.project1.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    //integer
+    //integer aja
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
