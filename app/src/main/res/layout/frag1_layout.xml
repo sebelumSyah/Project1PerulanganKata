@@ -33,6 +33,7 @@
         android:theme="@style/Theme.AppCompat.DayNight">
 
         <EditText
+            android:id="@+id/inputText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
@@ -43,7 +44,7 @@
             android:paddingRight="5dp"
             android:textColor="@android:color/darker_gray"
             android:textColorHint="@android:color/darker_gray"
-            android:textSize="19dp"
+            android:textSize="10dp"
             android:textStyle="bold" />
     </ScrollView>
 
@@ -66,11 +67,12 @@
         android:background="@drawable/borderfix">
 
         <TextView
+            android:id="@+id/resultView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@android:color/darker_gray"
             android:fontFamily="serif-monospace"
-            android:textSize="19dp"
+            android:textSize="10dp"
             android:textStyle="bold"/>
     </ScrollView>
 
@@ -82,6 +84,7 @@
         android:paddingTop="430dp">
 
         <Button
+            android:id="@+id/proses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
