@@ -82,16 +82,16 @@ public class UbahArray {
         return Hasil;
     }
     public ArrayList<String> elemenSama(ArrayList<String> temp){
-        ArrayList<String> Hasil= new ArrayList();
+        ArrayList<String> Hasil1= new ArrayList();
         for(int i=0; i<temp.size()-1;i++){
             if(temp.get(i).equalsIgnoreCase(temp.get(i+1))==false){
-                Hasil.add(temp.get(i));
+                Hasil1.add(temp.get(i));
             }
             else{
 
             }
         }
-        Hasil.add(temp.get(temp.size()-1));
-        return Hasil;
+        Hasil1.add(temp.get(temp.size()-1));
+        return Hasil1;
     }
 }
