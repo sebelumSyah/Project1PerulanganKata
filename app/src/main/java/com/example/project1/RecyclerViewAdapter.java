@@ -1,19 +1,24 @@
 package com.example.project1;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Herdi_WORK on 15.09.16.
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private ArrayList<String> rvData;
-    RecyclerViewAdapter(ArrayList<String> inputData) {
+    private List<String> rvData;
+
+    RecyclerViewAdapter(List<String> inputData) {
+
         rvData = inputData;
     }
 
@@ -53,6 +58,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // menghitung ukuran dataset / jumlah data yang ditampilkan di RecyclerView
         return rvData.size();
     }
+
+
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.project1;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -23,53 +24,68 @@ public class frag1 extends Fragment implements View.OnClickListener {
     TextView resultView;
     ArrayList<String> tampungList = new ArrayList<>();
 
+
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.frag1_layout, container, false);
+
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         inputText = (EditText) view.findViewById(R.id.inputText);
         resultView = (TextView) view.findViewById(R.id.resultView);
         proses = (Button) view.findViewById(R.id.proses);
-
         proses.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
-        resultView.setText("");
-        String text = inputText.getText().toString();
-        ArrayList<String> tp = new ArrayList();
-        UbahArray jodoh = new UbahArray();
-        jodoh.setKata(text);
-        filterKata dia = new filterKata();
-        String [] tampung =jodoh.arrayWithStrip();
-        if(tampung[tampung.length-1].contains(".")==false){
-            tampung[tampung.length-1]=tampung[tampung.length-1]+".";
-        }else{ tampung[tampung.length-1]=tampung[tampung.length-1];}
-        for(int i=0; i<tampung.length-1;i++){
-            dia.setKata1(tampung[i]);
-            dia.setKata2(tampung[i+1]);
-            if(dia.exe()==true){
-                if(tampung[i].length()<tampung[i+1].length()){
-                    tampung[i]=""; }
-                else if(tampung[i].length()>tampung[i+1].length()){
-                    tampung[i+1]="";}
-                else{ tampung[i]=""; } } }
-        for (int i=0; i<tampung.length;i++) {
-            if(!"".equals(tampung[i])){
-                tp.add(tampung[i]); } }
-        dia.setArray1(tp);
-        for(int i=0; i<dia.exe2().size();i++){
-            resultView.setText(resultView.getText().toString()+" "+dia.exe2().get(i));
+        switch (v.getId()){
+            case R.id.proses:
+                
+                resultView.setText("");
+                String text = inputText.getText().toString();
+                DataSingleton.data.add(text);
+                DataSingleton.adapter.notifyDataSetChanged();
+                ArrayList<String> tp = new ArrayList();
+                UbahArray jodoh = new UbahArray();
+                jodoh.setKata(text);
+                filterKata dia = new filterKata();
+                String [] tampung =jodoh.arrayWithStrip();
+                if(tampung[tampung.length-1].contains(".")==false){
+                    tampung[tampung.length-1]=tampung[tampung.length-1]+".";
+                }else{ tampung[tampung.length-1]=tampung[tampung.length-1];}
+                for(int i=0; i<tampung.length-1;i++){
+                    dia.setKata1(tampung[i]);
+                    dia.setKata2(tampung[i+1]);
+                    if(dia.exe()==true){
+                        if(tampung[i].length()<tampung[i+1].length()){
+                            tampung[i]=""; }
+                        else if(tampung[i].length()>tampung[i+1].length()){
+                            tampung[i+1]="";}
+                        else{ tampung[i]=""; }
+                    }
+                }
+                for (int i=0; i<tampung.length;i++) {
+                    if(!"".equals(tampung[i])){
+                        tp.add(tampung[i]); }
+                }
+                dia.setArray1(tp);
+                for(int i=0; i<dia.exe2().size();i++){
+                    resultView.setText(resultView.getText().toString()+" "+dia.exe2().get(i));
+                }
+                break;
         }
-        tampungList.add(resultView.getText().toString());
+
 
 
     }
+
 }
 
 

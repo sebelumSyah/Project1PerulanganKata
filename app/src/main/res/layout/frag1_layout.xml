@@ -55,7 +55,7 @@
         android:paddingTop="220dp"
         android:text="Result"
         android:textColor="@android:color/black"
-        android:textSize="10pt"
+        android:textSize="15pt"
         android:textStyle="bold" />
 
     <ScrollView
@@ -72,7 +72,7 @@
             android:layout_height="match_parent"
             android:textColor="@android:color/darker_gray"
             android:fontFamily="serif-monospace"
-            android:textSize="10dp"
+            android:textSize="15dp"
             android:textStyle="bold"/>
     </ScrollView>
 
