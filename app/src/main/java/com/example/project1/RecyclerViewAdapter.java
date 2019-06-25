@@ -8,11 +8,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
-/**
- * Created by Herdi_WORK on 15.09.16.
- */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<String> rvData;
@@ -24,9 +23,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        // di tutorial ini kita hanya menggunakan data String untuk tiap item
         TextView tvTitle;
-        public TextView tvSubtitle;
+        TextView tvSubtitle;
 
         public ViewHolder(View v) {
             super(v);
@@ -48,9 +46,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - mengambil elemen dari dataset (ArrayList) pada posisi tertentu
         // - mengeset isi view dengan elemen dari dataset tersebut
+        int detik, menit, jam, hari, bulan, tahun;
+        GregorianCalendar date = new GregorianCalendar();
+        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+        detik = date.get(Calendar.SECOND);
+        menit = date.get(Calendar.MINUTE);
+        jam =  date.get(Calendar.HOUR_OF_DAY);
+        hari = date.get(Calendar.DAY_OF_MONTH);
+        bulan = date.get(Calendar.MONTH);
+        tahun = date.get(Calendar.YEAR);
+
         final String name = rvData.get(position);
         holder.tvTitle.setText(rvData.get(position));
-        holder.tvSubtitle.setText("Frau " + position);
+        holder.tvSubtitle.setText(hari+" "+namabulan[bulan]+" "+tahun +";"+" "+jam+":"+menit+":"+detik);
     }
 
     @Override
