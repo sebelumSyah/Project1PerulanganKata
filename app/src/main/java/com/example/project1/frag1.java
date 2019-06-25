@@ -1,6 +1,7 @@
 package com.example.project1;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ public class frag1 extends Fragment implements View.OnClickListener {
     Button proses;
     EditText inputText;
     TextView resultView;
+    ArrayList<String> tampungList = new ArrayList<>();
 
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,6 +66,9 @@ public class frag1 extends Fragment implements View.OnClickListener {
         for(int i=0; i<dia.exe2().size();i++){
             resultView.setText(resultView.getText().toString()+" "+dia.exe2().get(i));
         }
+        tampungList.add(resultView.getText().toString());
+
+
     }
 }
 
