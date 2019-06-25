@@ -31,7 +31,7 @@ public class frag1 extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+//
         inputText = (EditText) view.findViewById(R.id.inputText);
         resultView = (TextView) view.findViewById(R.id.resultView);
         proses = (Button) view.findViewById(R.id.proses);
