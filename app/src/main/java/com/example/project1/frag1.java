@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
 import org.w3c.dom.Text;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class frag1 extends Fragment implements View.OnClickListener {
     Button proses;
@@ -34,16 +36,24 @@ public class frag1 extends Fragment implements View.OnClickListener {
         resultView = (TextView) view.findViewById(R.id.resultView);
         proses = (Button) view.findViewById(R.id.proses);
         proses.setOnClickListener(this);
-
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.proses:
                 resultView.setText("");
+                int detik, menit, jam, hari, bulan, tahun;
+                GregorianCalendar date = new GregorianCalendar();
+                String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+                detik = date.get(Calendar.SECOND);
+                menit = date.get(Calendar.MINUTE);
+                jam =  date.get(Calendar.HOUR_OF_DAY);
+                hari = date.get(Calendar.DAY_OF_MONTH);
+                bulan = date.get(Calendar.MONTH);
+                tahun = date.get(Calendar.YEAR);
                 String text = inputText.getText().toString();
                 DataSingleton.data.add(text);
+                DataSingleton.date.add(hari+" "+namabulan[bulan]+" "+tahun+" ; "+jam+":"+menit+":"+detik);
                 DataSingleton.adapter.notifyDataSetChanged();
 
                 ArrayList<String> tp = new ArrayList();

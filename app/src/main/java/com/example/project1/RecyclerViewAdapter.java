@@ -15,10 +15,12 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<String> rvData;
+    private List<String> rvDate;
 
-    RecyclerViewAdapter(List<String> inputData) {
+    RecyclerViewAdapter(List<String> inputData, List<String> inputDate) {
 
         rvData = inputData;
+        rvDate = inputDate;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -44,21 +46,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - mengambil elemen dari dataset (ArrayList) pada posisi tertentu
-        // - mengeset isi view dengan elemen dari dataset tersebut
-        int detik, menit, jam, hari, bulan, tahun;
-        GregorianCalendar date = new GregorianCalendar();
-        String namabulan[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-        detik = date.get(Calendar.SECOND);
-        menit = date.get(Calendar.MINUTE);
-        jam =  date.get(Calendar.HOUR_OF_DAY);
-        hari = date.get(Calendar.DAY_OF_MONTH);
-        bulan = date.get(Calendar.MONTH);
-        tahun = date.get(Calendar.YEAR);
+        
 
         final String name = rvData.get(position);
         holder.tvTitle.setText(rvData.get(position));
-        holder.tvSubtitle.setText(hari+" "+namabulan[bulan]+" "+tahun +";"+" "+jam+":"+menit+":"+detik);
+        holder.tvSubtitle.setText(rvDate.get(position));
     }
 
     @Override
