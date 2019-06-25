@@ -26,12 +26,10 @@ public class frag2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(frag2_layout,container,false );
 
-
     }
 
     private RecyclerView rvView;
     private RecyclerView.LayoutManager layoutManager;
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -43,7 +41,7 @@ public class frag2 extends Fragment {
         layoutManager = new LinearLayoutManager(this.getContext());
         rvView.setLayoutManager(layoutManager);
 
-        DataSingleton.adapter = new RecyclerViewAdapter(DataSingleton.data);
+        DataSingleton.adapter = new RecyclerViewAdapter(DataSingleton.data,DataSingleton.date);
         rvView.setAdapter(DataSingleton.adapter);
 
     }
