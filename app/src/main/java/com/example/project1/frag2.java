@@ -11,14 +11,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.project1.R.layout.frag2_layout;
 
-public class frag2 extends Fragment {
+public class frag2 extends Fragment   {
 
     @Nullable
     @Override
@@ -41,10 +43,14 @@ public class frag2 extends Fragment {
         layoutManager = new LinearLayoutManager(this.getContext());
         rvView.setLayoutManager(layoutManager);
 
-        DataSingleton.adapter = new RecyclerViewAdapter(DataSingleton.data,DataSingleton.date);
+        DataSingleton.adapter = new RecyclerViewAdapter(DataSingleton.data,DataSingleton.date,this.getContext());
         rvView.setAdapter(DataSingleton.adapter);
 
+
+
+
     }
+
 
 
 }

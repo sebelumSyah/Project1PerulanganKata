@@ -3,4 +3,11 @@
     <string name="tab_text_1">Input</string>
     <string name="tab_text_2">Riwayat</string>
     <string name="firman">Firman</string>
+    <string name="detail">DETAIL</string>
+    <string name="input">INPUT :</string>
+    <string name="output">Output</string>
+    <string name="waktu_proses">Waktu proses</string>
+    <string name="kata_berulang">Kata berulang</string>
+    <string name="index_pertama">Index pertama</string>
+    <string name="jumlah">Jumlah</string>
 </resources>
