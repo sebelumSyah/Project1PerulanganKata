@@ -20,6 +20,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<String> rvDate;
     private Context context;
 
+
+    public RecyclerViewAdapter(List<String> inputData, List<String> inputDate) {
+
+        rvData = inputData;
+        rvDate = inputDate;
+    }
+
     public RecyclerViewAdapter(List<String> inputData, List<String> inputDate, Context context) {
 
         rvData = inputData;

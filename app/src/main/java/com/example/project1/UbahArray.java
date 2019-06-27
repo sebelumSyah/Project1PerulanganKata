@@ -72,7 +72,7 @@ public class UbahArray {
         ArrayList<String> Hasil= new ArrayList();
         int k=1;
         for(int i=0; i<temp.size()-1;i++){
-            if(temp.get(i).equals(temp.get(i+1))){
+            if(temp.get(i).equalsIgnoreCase(temp.get(i+1))){
                 k=k+1;
                 if(i==temp.size()-2){
                     Hasil.add(Integer.toString(k));}}

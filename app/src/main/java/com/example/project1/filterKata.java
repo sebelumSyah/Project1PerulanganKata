@@ -35,41 +35,32 @@ public class filterKata {
             int bil1=getKata2().length();
             int bil2=((bil1-1)/2);
             if(getKata2().contains("-") && getKata2().contains(".")==false){
-                if(getKata1().equals(getKata2().substring(0,bil2))&& getKata1().equals(getKata2().substring(bil2+1,bil1))){
-                    return true;
-                }
+                if(getKata1().equalsIgnoreCase(getKata2().substring(0,bil2))&& getKata1().equalsIgnoreCase(getKata2().substring(bil2+1,bil1))){
+                    return true;}
                 else{
-                    return false;
-                }
-            }
+                    return false;}}
             else{
-                return false;
-            }
+                return false;}
         }
         else if(getKata1().length()>getKata2().length()){
             int bil1=getKata1().length();
             int bil2=((bil1-1)/2);
             if(getKata1().contains("-")){
-                if(getKata2().equals(getKata1().substring(0,bil2))&&getKata2().equals(getKata1().substring(bil2+1,bil1))){
-                    return true;
-                }
+                if(getKata2().equalsIgnoreCase(getKata1().substring(0,bil2))&&getKata2().equalsIgnoreCase(getKata1().substring(bil2+1,bil1))){
+                    return true;}
                 else{
-                    return false;
-                }
+                    return false;}
             }
             else{
-                return false;
-            }
-        }
+                return false;}}
         else{
-            if(getKata1().equals(getKata2())){
+            if(getKata1().equalsIgnoreCase(getKata2())){
                 return true;
             }
             else{
                 return false;
             }
         }
-
     }
     public ArrayList<String> exe2(){
         ArrayList<String> tampung= new ArrayList();
@@ -77,7 +68,6 @@ public class filterKata {
         for(int i=1; i<getArray1().size();i++){
             if(getArray1().get(i).contains(".")||getArray1().get(i).contains(",")){
                 tampung.add(getArray1().get(i));
-
             }
             else{
                 String kata1=getArray1().get(i);
@@ -88,11 +78,8 @@ public class filterKata {
                 if(dia.exe()==false){
                     tampung.add(getArray1().get(i));
                 }
-
             }
-
         }
-
         return tampung;
     }
 }
